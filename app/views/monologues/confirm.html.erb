@@ -6,3 +6,9 @@
 
   <%= form.submit  "ささやく" %>
 <% end %>
+
+<%= form_with model: @monologue, url: new_monologue_path, local: true, method: 'get' do |form| %>
+  <%= form.hidden_field :content %>
+  <%= form.submit  "やめる", name: 'back' %>
+<% end %>
+

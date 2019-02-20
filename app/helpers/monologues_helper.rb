@@ -9,7 +9,7 @@ module MonologuesHelper
     end
 # _form.html.erbのsubmitボタンの名前をactionによって切り替える
     def new_or_edit_submit_message
-        if action_name == "new"
+        if action_name == "new" || action_name == "confirm"
             "ささやく"
         elsif action_name == "edit"
             "Edit"

@@ -21,7 +21,11 @@ class MonologuesController < ApplicationController
         end
     end
     def new
-        @monologue = Monologue.new
+        if params["back"]
+            @monologue = Monologue.new(monologue_params)
+        else
+            @monologue = Monologue.new
+        end
     end
     def confirm
         @monologue = Monologue.new(monologue_params)
