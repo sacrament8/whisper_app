@@ -1,5 +1,5 @@
 class MonologuesController < ApplicationController
-    
+    before_action :set_monologue, only: [:destroy, :edit]
     def index
         @monologues = Monologue.all
     end
@@ -9,6 +9,11 @@ class MonologuesController < ApplicationController
     end
     def new
         @monologue = Monologue.new
+    end
+    def destroy
+        if @monologue.destroy
+            redirect_to monologues_path, notice: '削除に成功しました'
+        end
     end
     private
     def set_monologue
