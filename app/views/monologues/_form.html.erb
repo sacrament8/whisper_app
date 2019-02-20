@@ -1,13 +1,12 @@
 <%= form_with model: @monologue, local: true, url: new_or_edit_path do |form| %>
 <% if @monologue.errors.any? %>
-	<h2><%= @monologue.errors.count %>件のエラーがあります。</h2>
-	<ul>
+	<ul class="error-list">
 		<% @monologue.errors.full_messages.each do |msg| %>
-			<li><%= msg %></li>
+			<li class="alert alert-danger col-xs-8"><%= msg %></li>
 		<% end %>
 	</ul>
 <% end %>
 
-    <div><%= form.text_field :content, size:95 %></div>
-    <%= form.submit new_or_edit_submit_message %>
+    <div><%= form.text_field :content, size: 120 %></div>
+    <%= form.submit new_or_edit_submit_message, class: 'btn btn-warning' %>
 <% end %>
