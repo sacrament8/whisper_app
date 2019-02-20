@@ -1,4 +1,13 @@
 <%= form_with model: @monologue, local: true do |form| %>
-    <div><%= form.text_field :content, size:95, maxlength:140 %></div>
+<% if @monologue.errors.any? %>
+	<h2><%= @monologue.errors.count %>件のエラーがあります。</h2>
+	<ul>
+		<% @monologue.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+    <div><%= form.text_field :content, size:95 %></div>
     <%= form.submit 'ささやく' %>
 <% end %>
