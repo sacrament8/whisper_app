@@ -1,9 +1,16 @@
 class MonologuesController < ApplicationController
-    before_action :set_monologue, only: [:destroy, :edit]
+    before_action :set_monologue, only: [:destroy, :edit, :update]
     def index
         @monologues = Monologue.all
     end
     def edit
+    end
+    def update
+        if @monologue.update(monologue_params)
+            redirect_to monologues_path, notice: '編集に成功しました!'
+        else
+            render 'edit'
+        end
     end
     def create
         @monologue = Monologue.new(monologue_params)
