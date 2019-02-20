@@ -1,1 +1,11 @@
 <h1>top(index)page</h1>
+
+<% @monologues.each do |m| %>
+    <div>
+        <%= m.content %>
+    </div>
+    <div><%= link_to 'Edit', edit_monologue_path(m.id) %></div>
+    <div><%= link_to 'Delete', monologue_path(m.id), method: :delete, data: { confirm: '本当にささやきを消しますか?' } %></div>
+<%end%>
+
+<div><%= link_to 'ささやく', new_monologue_path %></div>
