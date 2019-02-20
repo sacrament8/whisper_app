@@ -31,7 +31,6 @@ class MonologuesController < ApplicationController
         @monologue = Monologue.new(monologue_params)
         render 'new' if @monologue.invalid?
     end
-
     def destroy
         if @monologue.destroy
             redirect_to monologues_path, notice: '削除に成功しました'
