@@ -6,6 +6,12 @@ class MonologuesController < ApplicationController
     def edit
     end
     def create
+        @monologue = Monologue.new(monologue_params)
+        if @monologue.save
+            redirect_to monologues_path, notice: 'ささやけました!'
+        else
+            render 'new'
+        end
     end
     def new
         @monologue = Monologue.new
