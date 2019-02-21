@@ -1,7 +1,3 @@
-body {
-  background-color: #3c75d1;
-}
-
 .navbar {
   margin-bottom: 50px;
 }
@@ -28,10 +24,18 @@ body {
 .panel-body {
   font-size: 18px;
   font-weight: bold;
-  font-family: 'arial unicode ms';
   word-wrap: break-word;
 }
 
 .error-list {
   list-style: none;
+}
+
+.form-submit-btn {
+  margin-top: 10px;
+}
+
+.confirm-submit-btn {
+  margin: 10px 0;
+  margin-left: 25%;
 }

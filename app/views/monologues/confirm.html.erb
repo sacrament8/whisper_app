@@ -1,4 +1,4 @@
-<h1>以下の内容でささやきますか?</h1>
+<h2 class="col-xs-12 text-center confirm-text">以下の内容でささやきますか?</h2>
 <%= form_with model: @monologue, url: monologues_path, local: true do |form| %>
   <%= form.hidden_field :content %>
   
@@ -7,12 +7,11 @@
     <%= simple_format @monologue.content %>
   </div>
 </div>
-
-  <%= form.submit  "ささやく" %>
+  <%= form.submit  "ささやく", class: 'btn btn-warning col-xs-6 confirm-submit-btn' %>
 <% end %>
 
 <%= form_with model: @monologue, url: new_monologue_path, local: true, method: 'get' do |form| %>
   <%= form.hidden_field :content %>
-  <%= form.submit  "やめる", name: 'back' %>
+  <%= form.submit  "もどる", name: 'back', class: 'btn btn-danger col-xs-offset-3 col-xs-6' %>
 <% end %>
 
