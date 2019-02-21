@@ -1,8 +1,12 @@
 <h1>以下の内容でささやきますか?</h1>
 <%= form_with model: @monologue, url: monologues_path, local: true do |form| %>
   <%= form.hidden_field :content %>
-
-  <div><%= @monologue.content %></div>
+  
+<div class="panel panel-default col-xs-10 col-xs-offset-1">
+  <div class="panel-body">
+    <%= simple_format @monologue.content %>
+  </div>
+</div>
 
   <%= form.submit  "ささやく" %>
 <% end %>

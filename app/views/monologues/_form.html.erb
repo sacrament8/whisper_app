@@ -7,6 +7,6 @@
 	</ul>
 <% end %>
 
-    <div><%= form.text_field :content, size: 120 %></div>
+    <div><%= form.text_area :content, size: '80×3' %></div>
     <%= form.submit new_or_edit_submit_message, class: 'btn btn-warning' %>
 <% end %>

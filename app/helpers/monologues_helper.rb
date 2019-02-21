@@ -1,7 +1,7 @@
 module MonologuesHelper
 # _form.html.erb送信先(url:)のpathをactionによって切り替える
     def new_or_edit_path
-        if action_name == "new"
+        if action_name == "new" || action_name == "confirm"
             confirm_monologues_path
         elsif action_name == "edit"
             monologue_path
